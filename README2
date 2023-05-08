@@ -1,0 +1,40 @@
+Introduction:
+
+The aim of this project is to improve an online shopping system by adding a new server component implemented as a RESTful webserver and microservices that run as independent
+Java programs. The new server component should be able to generate web pages for user, product, and order information, while the microservices should be able to load product
+and order information, update product price and quantity, check username and password validity, and check whether a user can cancel an order.
+
+Design:
+
+The system architecture follows a client-server model, where the client sends HTTP requests to the server, and the server responds with the appropriate HTTP responses. 
+The RESTful webserver is implemented using Java and the Spring framework. The webserver provides the following API endpoints:
+
+- /users/<username>: Generates a web page for user information.
+- /products/<product_id>: Generates a web page for product information.
+- /orders/<order_id>: Generates a web page for order information.
+
+The microservices are implemented as independent Java programs and communicate with the webserver using RESTful APIs. The microservices provide the following functionality:
+
+- Load product information for a product given its id.
+- Load information for an order given its id.
+- Update price of a product given its id.
+- Update quantity of a product given its id.
+- Check if a pair of username and password is valid (i.e., exists in the database).
+- Check if an user can cancel an order, given the username and order id. Note: if and only if that user is the person that makes that order then yes.
+
+Implementation:
+
+The RESTful webserver is implemented using the Spring framework. The web pages for user, product, and order information are generated using Thymeleaf templates. The 
+microservices are implemented using Spring Boot.
+
+Testing:
+
+The system is tested using JUnit for unit testing and Postman for API testing. The unit tests ensure that the microservices are functioning correctly, while the API tests 
+ensure that the webserver is communicating correctly with the microservices.
+
+Conclusion:
+
+The system provides a RESTful webserver that generates web pages for user, product, and order information. It also provides microservices for loading product and order 
+information, updating product price and quantity, checking username and password validity, and checking whether a user can cancel an order. The system is designed using a 
+client-server model, where the client sends HTTP requests to the server, and the server responds with the appropriate HTTP responses. The system is tested using JUnit for 
+unit testing and Postman for API testing.
